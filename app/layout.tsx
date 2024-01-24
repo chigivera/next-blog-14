@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "./components/theme-provider"
 import Navbar from "./components/Navbar"
+import { ReactNode } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+export interface RootLayoutProps {
+  children: ReactNode;
+}
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
