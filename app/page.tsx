@@ -13,6 +13,9 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+export const revalidate = 30;
+
+
 const getData = async () => {
   const query = `*[_type == "blog"] | order(_createdAt desc){
     title,
