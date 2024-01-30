@@ -43,21 +43,25 @@ export default  async function Home() {
    <div className="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-5">
       
     {data.map((post,idx)=> (
-     <Card key={idx}>
+     <Card key={idx} className="h-[420px] hover:h-fit">
+     <div className=" w-500 h-[170px] overflow-hidden">
+
       <Image
         src={urlFor(post.titleImage).url()}
         alt="image"
         width={500}
         height={500}
-        className="rounded-t-lg h-[200px] object-cover"
+        className="rounded-t-lg object-cover transition-transform duration-1000 ease-in-out transform hover:translate-y-[-80%]"
+        
       />
-     <CardHeader>
-       <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-       <CardDescription className="line-clamp-3 text-sm mt-2 text-gray">{post.smallDescription}</CardDescription>
+     </div>
+     <CardHeader >
+       <CardTitle className="line-clamp-2  ">{post.title}</CardTitle>
+       <CardDescription className="line-clamp-3 text-sm mt-2 text-gray hover:line-clamp-none">{post.smallDescription}</CardDescription>
      </CardHeader>
    
      <CardFooter>
-      <Button asChild className="w-full mt-7">
+      <Button asChild className="w-full mt-7 ">
         <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
       </Button>
 

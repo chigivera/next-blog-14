@@ -11,5 +11,7 @@ export interface fullBlog  {
     currentSlug:string;
     content: any,
     titleImage:any;
+    smallDescription:any;
+
 }
 
